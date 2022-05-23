@@ -19,8 +19,8 @@ Contraseñas->
 */
 var dbcon = mysql.createConnection({
     host: 'localhost',
-    user: 'winarchitect', 
-    password:'Pass_001',
+    user: 'lnxarchitect', 
+    password:'password01',
     database: 'acmeconsult'
 });
 

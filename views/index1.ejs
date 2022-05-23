@@ -1,3 +1,33 @@
 <%- include("templates/header",{titulopag:'Pagina de inicio'}) %>
-	<h1>Indice <%= titulopag%></h1>
+	<DIV class="table-data">
+		<H2>Mostrando información de la tabla emp de la base de datos acmeconsult</H2>
+		<table border="1">
+			<tr>
+				<th>ENO</th>
+				<th>ENAME</th>
+				<th>TITLE</th>
+				<th>Editar</th>
+				<th>Borrar</th>
+			</tr>
+
+			<%
+			if(datosConsulta.length != 0){
+				datosConsulta.forEach(function(data){
+			%>
+					<tr>
+						<td> <%=data.eno %> </td>
+						<td> <%=data.ename%> </td>
+						<td> <%=data.title%> </td>
+						<td><a href="./editar/<%=data.eno%>">Editar</a></td>
+						<td><a href="./eliminar/<%=data.eno%>">Eliminar</a></td>
+					</tr>
+				<%});
+				}
+				else{ %>
+					<tr>
+						<td colspan="7">No se encontró información</td>
+					</tr>
+				<%}%>
+		</table>
+	</DIV>
 <%- include("templates/footer"); %>
