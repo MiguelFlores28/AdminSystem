@@ -10,6 +10,8 @@ app.set('views', __dirname + '/views');
 
 //Ruteo
 app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/public'));
+app.use('/', require('./router/router.main'));
 app.use('/Apartado1', require('./router/router.apartado1'));
 
 //Servidor express
