@@ -10,6 +10,10 @@ router.get('/', (req, res, next) => {
     
 });
 
+router.get('/login', (req, res,)=> {
+    res.render('login', {titulopag: "inicio de sesión"});
+});
+
 /*Función router.get() 
 Es la que renderiza la vista que ocupemos mostrar de acuerdo a la ruta accesada
 Se especifica la ruta de acceso para la vista (Desde la definición de ruta de main_app.js)

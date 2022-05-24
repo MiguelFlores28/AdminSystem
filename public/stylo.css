@@ -45,3 +45,30 @@ td:hover{
     margin-top: 40px;
     background-color: #fafafa;
 }
+
+#login{
+  border: 1px solid;
+  border-radius: 25px;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  display:block;
+  padding: 10px;
+  width: 50%;
+  color: #fff;
+  background-color: #212121;
+}
+
+body {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}

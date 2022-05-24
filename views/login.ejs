@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulopag %></title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/stylo.css">
+</head>
+<DIV id="login">
+    <h1>Admin System</h1>
+    <br>
+    <h5>By MYDG</h5>
+    <br>
+    <form method="post" action="/auth">
+        <input style="width: 80%;" type="text" id="usuario" name="usuario" placeholder="Usuario o correo electrónico" required/>
+        <br>
+        <br>
+        <br>
+        <input style="width: 80%;" type="password" id="password" name="password" placeholder="Contraseña" required/>
+        <br>
+    </form>
+    <br>
+    <button type="submit" name="loginbtn" onclick="location.href='/'">Iniciar sesión</button>
+</DIV>
+<%- include("templates/footer")%>
