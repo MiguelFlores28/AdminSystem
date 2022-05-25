@@ -1,0 +1,31 @@
+<%- include("templates/header",{titulopag:'Clientes'})%>
+<DIV class="table-data">
+    <h2>Mostrando información de la tabla Usuarios de la base de datos AdminSystemDB</h2>
+    <table border="1" style="width: 100%; margin:auto;">
+        <tr>
+            <th>ID</th>
+            <th>Capacidad total</th>
+            <th>Capacidad actual</th>
+            <th>ID Dirección</th>
+        </tr>
+
+        <%
+        if(datosConsulta.length != 0){
+            datosConsulta.forEach(function(data){
+        %>
+                <tr>
+                    <td><%=data.id_a%></td>
+                    <td><%=data.cap_total%></td>
+                    <td><%=data.cap_actual%></td>
+                    <td><%=data.id_o%></td>
+                </tr>        
+        <%  });
+        }
+        else{ %>
+            <tr>
+                <td colspan="7">No se encontró información</td>
+            </tr>
+        <%}%>
+    </table>
+</DIV>
+<%- include("templates/footer")%>

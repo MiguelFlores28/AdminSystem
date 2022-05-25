@@ -35,11 +35,11 @@ INSERT INTO Destino_E(id_d,  dir_destino) VALUES (3, "Sonora");
 INSERT INTO Destino_E(id_d,  dir_destino) VALUES (4, "Monterrey");
 INSERT INTO Destino_E(id_d,  dir_destino) VALUES (5, "Guanajuato");
 
-INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (1, "Juan", "Hernández", "Gonzalez");
-INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (2, "José", "García", "Pérez");
+INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (1, "Juan", "Hernandez", "Gonzalez");
+INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (2, "José", "Garcia", "Perez");
 INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (3, "Luis", "Martinez", "Rodriguez");
-INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (4, "Maria", "Ramirez", "Sánchez");
-INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (5, "Guadalupe", "López", "Cruz");
+INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (4, "Maria", "Ramirez", "Sanchez");
+INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (5, "Guadalupe", "Lopez", "Cruz");
 
 INSERT INTO Sueldos(id_s, id_t, comision, trabajos_realizados, sueldo_estimado) VALUES (1, 1, 500, 6, 3000);
 INSERT INTO Sueldos(id_s, id_t, comision, trabajos_realizados, sueldo_estimado) VALUES (2, 2, 400, 7, 2800);
@@ -48,7 +48,7 @@ INSERT INTO Sueldos(id_s, id_t, comision, trabajos_realizados, sueldo_estimado) 
 INSERT INTO Sueldos(id_s, id_t, comision, trabajos_realizados, sueldo_estimado) VALUES (5, 5, 100, 5, 500);
 
 INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (1, "Sandra", "Huerta", "Serna", "SHS", 2);
-INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (2, "Miguel", "Flores", "López", "MFL", 3);
+INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (2, "Miguel", "Flores", "Lopez", "MFL", 3);
 INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (3, "Daniel", "Maldonado", "Rosales", "DMR", 4);
 INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (4, "Alondra", "Gutierrez", "Mayorga", "AGM", 5);
 INSERT INTO Clientes(id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, id_d) VALUES (5, "Gilberto", "Padilla", "Villalobos", "GPV", 1);

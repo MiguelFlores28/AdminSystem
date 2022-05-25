@@ -1,0 +1,33 @@
+<%- include("templates/header",{titulopag:'Clientes'})%>
+<DIV class="table-data">
+    <h2>Mostrando información de la tabla Usuarios de la base de datos AdminSystemDB</h2>
+    <table border="1" style="width: 100%; margin:auto;">
+        <tr>
+            <th>ID</th>
+            <th>ID Trabajador</th>
+            <th>Comision</th>
+            <th>Trabajos Realizados</th>
+            <th>Sueldo Estimado</th>
+        </tr>
+
+        <%
+        if(datosConsulta.length != 0){
+            datosConsulta.forEach(function(data){
+        %>
+                <tr>
+                    <td><%=data.id_s%></td>
+                    <td><%=data.id_t%></td>
+                    <td><%=data.comision%></td>
+                    <td><%=data.trabajos_realizados%></td>
+                    <td><%=data.sueldo_estimado%></td>        
+                </tr>        
+        <%  });
+        }
+        else{ %>
+            <tr>
+                <td colspan="7">No se encontró información</td>
+            </tr>
+        <%}%>
+    </table>
+</DIV>
+<%- include("templates/footer")%>
