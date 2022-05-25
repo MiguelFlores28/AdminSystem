@@ -6,7 +6,7 @@ router.use(express.static(__dirname + "/public"));
 router.use(express.static(__dirname + "/"));
 
 router.get('/clientes',(req, res, next)=>{
-    var sql = "SELECT * FROM clientes;";
+    var sql = "SELECT * FROM Clientes;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -16,7 +16,7 @@ router.get('/clientes',(req, res, next)=>{
 });
 
 router.get('/almacenes',(req, res, next)=>{
-    var sql = "SELECT * FROM almacenes;";
+    var sql = "SELECT * FROM Almacenes;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -27,7 +27,7 @@ router.get('/almacenes',(req, res, next)=>{
 
 //Modificar desde aquí
 router.get('/destinos',(req, res, next)=>{
-    var sql = "SELECT * FROM destino_e;";
+    var sql = "SELECT * FROM Destino_E;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -37,7 +37,7 @@ router.get('/destinos',(req, res, next)=>{
 });
 
 router.get('/envios',(req, res, next)=>{
-    var sql = "SELECT * FROM envios;";
+    var sql = "SELECT * FROM Envios;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -47,7 +47,7 @@ router.get('/envios',(req, res, next)=>{
 });
 
 router.get('/facturas',(req, res, next)=>{
-    var sql = "SELECT * FROM facturas;";
+    var sql = "SELECT * FROM Facturas;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -57,7 +57,7 @@ router.get('/facturas',(req, res, next)=>{
 });
 
 router.get('/origenes',(req, res, next)=>{
-    var sql = "SELECT * FROM origen_e;";
+    var sql = "SELECT * FROM Origen_E;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -67,7 +67,7 @@ router.get('/origenes',(req, res, next)=>{
 });
 
 router.get('/productos',(req, res, next)=>{
-    var sql = "SELECT * FROM productos;";
+    var sql = "SELECT * FROM Productos;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -77,7 +77,7 @@ router.get('/productos',(req, res, next)=>{
 });
 
 router.get('/sueldos',(req, res, next)=>{
-    var sql = "SELECT * FROM sueldos;";
+    var sql = "SELECT * FROM Sueldos;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));
@@ -87,7 +87,7 @@ router.get('/sueldos',(req, res, next)=>{
 });
 
 router.get('/trabajadores',(req, res, next)=>{
-    var sql = "SELECT * FROM trabajadores;";
+    var sql = "SELECT * FROM Trabajadores;";
     conn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Resultado "+ JSON.stringify(data));

@@ -18,10 +18,10 @@ Contraseñas->
     lnxmanager@localhost: password03
 */
 var dbcon = mysql.createConnection({
-    host: 'localhost',
-    user: 'winarchitect', 
-    password:'Pass_001',
-    database: 'adminsystemdb'
+    host: '172.16.113.185',
+    user: 'lnxarchitect', 
+    password:'password02',
+    database: 'AdminSystemDB'
 });
 
 //Conexión con la base de datos
