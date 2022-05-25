@@ -1,6 +1,6 @@
 /*
 Para cargar el Script
-SOURCE S:\temp\BDFinal\BDScript.sql
+SOURCE S:\temp\BDFinal\AdminSystem\BDScript.sql
 
 En caso de que no permita insertar registros, se tendrá que eliminar todas las llaves,
 insertar los registros correspondientes y posteriormente agregar las PK y FK de nuevo, para esto:

@@ -12,7 +12,8 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/'));
 app.use(express.static(__dirname + '/public'));
 app.use('/', require('./router/router.main'));
-app.use('/Apartado1', require('./router/router.apartado1'));
+app.use('/Tablas', require('./router/router.tablas'));
+//app.use('/Operaciones', require('./router/router.operaciones'));
 
 //Servidor express
 app.listen (puerto, () =>{
