@@ -16,16 +16,4 @@ router.get('/index1', (req, res, next) => {
     
 });
 
-/*Función router.get() 
-Es la que renderiza la vista que ocupemos mostrar de acuerdo a la ruta accesada
-Se especifica la ruta de acceso para la vista (Desde la definición de ruta de main_app.js)
-y un bloque de sentencias
-
-Ejemplo:
-Ruta de acceso desde 'Apartado1/' que fue definida en main_app.js
-Su ruta completa sería /Apartado1/index
-                v
-router.get('/index', (req, res)=>{
-    bloque de sentencias
-})*/
 module.exports = router;
