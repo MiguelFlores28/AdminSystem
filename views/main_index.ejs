@@ -1,9 +1,11 @@
 <%- include("templates/header",{titulopag:'Pagina de inicio'}) %>
 <DIV id="cuerpo">
     <body>
-        <p>Vista general de la base de datos: PruebaBD</p>
         <br>
-        <table style="margin:auto;">
+        <p style="Padding:10px;">Vista general de la base de datos: PruebaBD</p>
+        <br>
+        <br>
+        <table style="margin-left:auto; margin-right:auto; padding-top:10px;">
             <tr>
                 <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/almacenes'">Alamcenes<br><i class="material-icons">warehouse</i></td>            
                 <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/clientes'">Clientes<br><i class="material-icons">group</i></td>            
@@ -25,5 +27,6 @@
         </table>
     </body>
 </DIV>
+
 
 <%- include("templates/footer"); %>
