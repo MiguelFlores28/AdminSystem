@@ -23,9 +23,9 @@ CREATE TABLE Envios (id_e NUMERIC, id_o NUMERIC, id_d NUMERIC);
 
 /*Inserts*/
 
-INSERT INTO Origen_E(id_o, dir_origen) VALUES (1, "San Luis Potosí");
+INSERT INTO Origen_E(id_o, dir_origen) VALUES (1, "San Luis Potosi");
 INSERT INTO Origen_E(id_o, dir_origen) VALUES (2, "Sonora");
-INSERT INTO Origen_E(id_o, dir_origen) VALUES (3, "Yucatán");
+INSERT INTO Origen_E(id_o, dir_origen) VALUES (3, "Yucatan");
 INSERT INTO Origen_E(id_o, dir_origen) VALUES (4, "Jalisco");
 INSERT INTO Origen_E(id_o, dir_origen) VALUES (5, "Veracruz");
 
@@ -36,7 +36,7 @@ INSERT INTO Destino_E(id_d,  dir_destino) VALUES (4, "Monterrey");
 INSERT INTO Destino_E(id_d,  dir_destino) VALUES (5, "Guanajuato");
 
 INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (1, "Juan", "Hernandez", "Gonzalez");
-INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (2, "José", "Garcia", "Perez");
+INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (2, "Jose", "Garcia", "Perez");
 INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (3, "Luis", "Martinez", "Rodriguez");
 INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (4, "Maria", "Ramirez", "Sanchez");
 INSERT INTO Trabajadores(id_t, nombre_t, apepat_t, apemat_t) VALUES (5, "Guadalupe", "Lopez", "Cruz");

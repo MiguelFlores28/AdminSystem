@@ -1,14 +1,16 @@
 <%- include("templates/header",{titulopag:'Clientes'})%>
 <DIV class="table-data">
-    <h2>Mostrando información de la tabla Usuarios de la base de datos AdminSystemDB</h2>
-    <table border="1" style="width: 100%; margin:auto;">
+    <br><br>
+    <h2>Mostrando información de la tabla <%= titulopag%> de la base de datos AdminSystemDB</h2>
+    <br><br>
+    <table class="table table-striped table-bordered" style="width: 100%; margin:auto;">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Apellido Paterno</th>
             <th>Apellido Materno</th>
             <th>Clave Pedidos</th>
-            <th>ID Dirección</th>
+            <th>Dirección de envío</th>
         </tr>
 
         <%
@@ -21,7 +23,7 @@
                     <td><%=data.apepat_c%></td>
                     <td><%=data.apemat_c%></td>
                     <td><%=data.clave_pedidos%></td>
-                    <td><%=data.id_d%></td>
+                    <td><%=data.dir_destino%></td>
                 </tr>        
         <%  });
         }
