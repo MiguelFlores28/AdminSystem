@@ -19,9 +19,9 @@ Contraseñas->
 */
 var dbcon = mysql.createConnection({
     host: 'localhost',
-    user: 'winarchitect', 
-    password:'Pass_001',
-    database: 'adminsystemdb'
+    user: 'lnxarchitect', 
+    password:'password01',
+    database: 'AdminSystemDB'
 });
 
 //Conexión con la base de datos
