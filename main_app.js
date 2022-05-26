@@ -2,7 +2,8 @@
  const express = require('express');
  const app = express();
  const puerto = 10000;
- const connection = require('./dbconnection.js');
+ const connection = require('./localdbconnection.js');
+ const sconn = require('./serverdbconnection.js');
 
 //Creación del motor de vistas
 app.set('view engine', 'ejs');

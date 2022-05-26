@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const conn = require('../dbconnection.js');
+const conn = require('../localdbconnection.js');
+const sconn = require('../serverdbconnection.js');
 
 router.use(express.static(__dirname + "/public"))
 router.use(express.static(__dirname + "/"));
