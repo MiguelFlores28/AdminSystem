@@ -49,7 +49,7 @@ router.post('/altas', async (req, res, datos) =>{
                         +body.id_p+ ", '"+body.id_a+ "', '"+body.nombre_p+ "', '"+body.descripcion_p+ "', '"+body.precio_p+ "', '"+body.stock_p+"');"
                         break;
 
-                case "Origenes":
+                case "Origen_E":
                         sql = "INSERT INTO " + body.btn_valor + "(id_o, dir_origen) VALUES ("+body.id_o+ ", '"+body.dir_origen+"');"
                         sql2 = "INSERT INTO " + body.btn_valor + "(id_o, dir_origen) VALUES ("+body.id_o+ ", '"+body.dir_origen+"');"
                         break;
@@ -63,7 +63,7 @@ router.post('/altas', async (req, res, datos) =>{
                         +body.id_f+ ", '"+body.id_c+ "', '"+body.id_p+ "', '"+body.cant+ "', '"+body.precio_p+ "', '"+body.total+ "', '"+body.id_e+"');"
                         break;
 
-                case "Destinos":
+                case "Destino_E":
                         sql = "INSERT INTO " + body.btn_valor + "(id_d,  dir_destino) VALUES ("+body.id_d+ ", '"+body.dir_destino+"');"
                         sql2 = "INSERT INTO " + body.btn_valor + "(id_d,  dir_destino) VALUES ("+body.id_d+ ", '"+body.dir_destino+"');"
                         break;
@@ -105,9 +105,55 @@ router.post('/altas', async (req, res, datos) =>{
         const body = req.body;
 
         console.log(body);
-
-        var sql = "DELETE FROM "+ body.btn_valor+" WHERE id_a="+body.id_a+";";
+        var sql = "";
         var sql2 = "";
+        switch(body.btn_valor){
+                case "Almacenes":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_a="+body.id_a+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_a="+body.id_a+";"
+                        break;
+
+                case "Clientes":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_c="+body.id_c+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_c="+body.id_c+";"
+                        break;
+
+                case "Productos":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_p="+body.id_p+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_p="+body.id_p+";"
+                        break;
+
+                case "Origen_E":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_o="+body.id_o+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_o="+body.id_o+";"
+                        break;
+
+                case "Facturas":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_f="+body.id_f+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_f="+body.id_f+";"
+                        break;
+
+                case "Destino_E":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_d="+body.id_d+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_d="+body.id_d+";"
+                        break;
+
+                case "Envios":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_e="+body.id_e+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_e="+body.id_e+";"
+                        break;
+
+                case "Trabajadores":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_t="+body.id_t+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_t="+body.id_t+";"
+                        break;
+
+                case "Sueldos":
+                        sql="DELETE FROM "+ body.btn_valor+" WHERE id_s="+body.id_s+";";
+        sql2="DELETE FROM "+ body.btn_valor+" WHERE id_s="+body.id_s+";"
+                        break;
+        }
+        
         lconn.query(sql, (err, data, fields) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));
@@ -152,7 +198,7 @@ router.post('/altas', async (req, res, datos) =>{
                         " WHERE id_p= "+body.id_modificar+";";       
                         break;
 
-                case "Origenes":
+                case "Origen_E":
                         sql= "UPDATE " + body.btn_valor + 
                         " SET id_o= "+body.id_o +", dir_origen = '"+body.dir_origen +
                         "' WHERE id_o= "+body.id_modificar+";";       
@@ -170,7 +216,7 @@ router.post('/altas', async (req, res, datos) =>{
                         " WHERE id_f= "+body.id_modificar+";";       
                         break;
 
-                case "Destinos":
+                case "Destino_E":
                         sql= "UPDATE " + body.btn_valor + 
                         " SET id_d= "+body.id_d +", dir_destino = '"+body.dir_destino+
                         "' WHERE id_d= "+body.id_modificar+";";       

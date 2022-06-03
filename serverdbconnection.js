@@ -1,4 +1,4 @@
-/*var mysql = require('mysql');
+var mysql = require('mysql');
 
 var sdbcon = mysql.createConnection({
     host: '172.16.112.202',
@@ -13,4 +13,4 @@ sdbcon.connect(function (err){
     console.log("Conectado a la base de datos del servidor linux!");
 })
 
-module.exports = sdbcon;/*
+module.exports = sdbcon;
