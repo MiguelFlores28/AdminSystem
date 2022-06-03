@@ -6,7 +6,7 @@ const sconn = require('../serverdbconnection.js');
 router.use(express.static(__dirname + "/public"));
 router.use(express.static(__dirname + "/"));
 
-router.get('/clientes',(req, res, next)=>{
+router.get('/clientes',async (req, res, next)=>{
     var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM Clientes INNER JOIN Destino_E ON Clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -16,7 +16,7 @@ router.get('/clientes',(req, res, next)=>{
     })
 });
 
-router.get('/almacenes',(req, res, next)=>{
+router.get('/almacenes',async (req, res, next)=>{
     var sql = "SELECT id_a, cap_total, cap_actual, dir_origen FROM Almacenes INNER JOIN Origen_E ON Almacenes.id_o = Origen_E.id_o;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -27,7 +27,7 @@ router.get('/almacenes',(req, res, next)=>{
 });
 
 //Modificar desde aquí
-router.get('/destinos',(req, res, next)=>{
+router.get('/destinos',async (req, res, next)=>{
     var sql = "SELECT * FROM Destino_E;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -37,7 +37,7 @@ router.get('/destinos',(req, res, next)=>{
     })
 });
 
-router.get('/envios',(req, res, next)=>{
+router.get('/envios',async (req, res, next)=>{
     var sql = "SELECT Envios.id_e, Envios.id_o, Envios.id_d, dir_origen, dir_destino FROM Envios INNER JOIN Origen_E ON Envios.id_o = Origen_E.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_E.id_d  ORDER BY id_e ASC;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -47,7 +47,7 @@ router.get('/envios',(req, res, next)=>{
     })
 });
 
-router.get('/facturas',(req, res, next)=>{
+router.get('/facturas',async (req, res, next)=>{
     var sql = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM Facturas INNER JOIN Clientes ON Facturas.id_c = Clientes.id_c INNER JOIN Envios ON Facturas.id_e = Envios.id_e INNER JOIN Productos ON Facturas.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_e.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_e.id_d ORDER BY id_f ASC;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -57,7 +57,7 @@ router.get('/facturas',(req, res, next)=>{
     })
 });
 
-router.get('/origenes',(req, res, next)=>{
+router.get('/origenes',async (req, res, next)=>{
     var sql = "SELECT * FROM Origen_E;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -67,7 +67,7 @@ router.get('/origenes',(req, res, next)=>{
     })
 });
 
-router.get('/productos',(req, res, next)=>{
+router.get('/productos',async (req, res, next)=>{
     var sql = "SELECT * FROM Productos;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -77,7 +77,7 @@ router.get('/productos',(req, res, next)=>{
     })
 });
 
-router.get('/sueldos',(req, res, next)=>{
+router.get('/sueldos',async (req, res, next)=>{
     var sql = "SELECT id_s, nombre_t, apepat_t, apemat_t, comision, trabajos_realizados, sueldo_estimado FROM Sueldos INNER JOIN Trabajadores ON  Sueldos.id_t = Trabajadores.id_t;";
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
@@ -87,7 +87,7 @@ router.get('/sueldos',(req, res, next)=>{
     })
 });
 
-router.get('/trabajadores',(req, res, next)=>{
+router.get('/trabajadores',async (req, res, next)=>{
     var sql = "SELECT * FROM Trabajadores;";
 
     lconn.query(sql, (err, data, fields) =>{

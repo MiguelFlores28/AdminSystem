@@ -1,0 +1,240 @@
+<%- include("templates/header",{titulopag:'Sección de cambios'})%>
+ <br>
+<DIV id="formulario-Insert" style="text-align:center;">
+    <H1>Sección de cambios en registros</H1>
+    <br>
+    <br>
+    <form class="formstyle" action="/Operaciones/cambios" method="post">
+        <label for="nombre-tabla">Selecciona el nombre de la tabla donde se hará el cambio de datos: </label>
+        <br><br><br><br>
+        <select name="nombre-tabla" id="slct-tbl">
+            <option value="Almacenes">Almacenes</option>
+            <option value="Clientes">Clientes</option>
+            <option value="Productos">Productos</option>
+            <option value="Origen_E">Origenes</option>
+            <option value="Facturas">Facturas</option>
+            <option value="Destino_E">Destinos</option>
+            <option value="Envios">Envios</option>
+            <option value="Trabajadores">Trabajadores</option>
+            <option value="Sueldos">Sueldos</option>
+        </select>
+        <br>
+        <br>
+        <button type="button" id="button-next" name="button-next">Siguiente</button>
+    </form><br><br>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Almacenes' name='Almacenes' style="display:none">
+        <input type="text" name="nombreTabla" value="Almacenes" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_a" placeholder="ID"> <br>
+        <input type="text" name="cap_total" placeholder="Capacidad total"><br>
+        <input type="text" name="cap_actual" placeholder="Capacidad actual"><br>
+        <input type="text" name="id_o" placeholder="ID de origen"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Almacenes">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Clientes' name='Clientes' style="display:none">
+        <input type="text" name="nombreTabla" value="Clientes" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_c" placeholder="ID"><br>
+        <input type="text" name="nombre_c" placeholder="Nombre"><br>
+        <input type="text" name="apepat_c" placeholder="Apellido Paterno"><br>
+        <input type="text" name="apemat_c" placeholder="Apellido Materno"><br>
+        <input type="text" name="clave_pedidos" placeholder="Clave Cliente"><br>
+        <input type="text" name="id_d" placeholder="ID de origen"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Clientes">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Productos' name='Productos' style="display:none">
+        <input type="text" name="nombreTabla" value="Productos" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_p" placeholder="ID"><br>
+        <input type="text" name="id_a" placeholder="ID Almacén"><br>
+        <input type="text" name="nombre_p" placeholder="Nombre de producto"><br>
+        <input type="text" name="descripcion_p" placeholder="Descripción de producto"><br>
+        <input type="text" name="precio_p" placeholder="Precio"><br>
+        <input type="text" name="stock_p" placeholder="Stock"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Productos">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Origenes' name='Origenes' style="display:none">
+        <input type="text" name="nombreTabla" value="Origen_E" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_o" placeholder="ID"><br>
+        <input type="text" name="dir_origen" placeholder="Direccion de ori<br>gen"><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Origen_E">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Facturas' name='Facturas' style="display:none">
+        <input type="text" name="nombreTabla" value="Facturas" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_f" placeholder="ID"><br>
+        <input type="text" name="id_c" placeholder="ID Cliente"><br>
+        <input type="text" name="id_p" placeholder="ID Producto"><br>
+        <input type="text" name="cant" placeholder="Cantidad"><br>
+        <input type="text" name="precio_p" placeholder="Precio Unitario"><br>
+        <input type="text" name="total" placeholder="Total"><br>
+        <input type="text" name="id_e" placeholder="ID envio"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Facturas">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Destinos' name='Destinos' style="display:none">
+        <input type="text" name="nombreTabla" value="Destino_E" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_d" placeholder="ID"><br>
+        <input type="text" name="dir_destino" placeholder="Direccion de des<br>tino"><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Destino_E">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Envios' name='Envios' style="display:none">
+        <input type="text" name="nombreTabla" value="Envios" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_e" placeholder="ID"><br>
+        <input type="text" name="id_o" placeholder="ID Origen"><br>
+        <input type="text" name="id_d" placeholder="ID Destino"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Envios">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Trabajadores' name='Trabajadores' style="display:none">
+        <input type="text" name="nombreTabla" value="Trabajadores" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_t" placeholder="ID"><br>
+        <input type="text" name="nombre_t" placeholder="Nombre"><br>
+        <input type="text" name="apepat_t" placeholder="Apellido paterno"><br>
+        <input type="text" name="apemat_t" placeholder="Apellido materno"><br><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Trabajadores">Alta</button>
+    </form>
+    
+    <form class="formstyle" action="/Operaciones/cambios" method="post" id='F-Sueldos' name='Sueldos' style="display:none">
+        <input type="text" name="nombreTabla" value="Sueldos" disabled><br>
+        <input type="text" name="id_modificar"  placeholder="ID del registro a modificar"><br>
+        <input type="text" name="id_s" placeholder="ID"><br>
+        <input type="text" name="id_t" placeholder="ID Trabajador"><br>
+        <input type="text" name="comision" placeholder="Comisión"><br>
+        <input type="text" name="trabajos_realizados" placeholder="Trabajos realizados"><br>
+        <input type="text" name="sueldo_estimado" placeholder="Sueldo est<br>imado"><br>
+    <button type="submit" name="btn_valor" id="btn_valor" value="Sueldos">Alta</button>
+    </form>
+    
+    <SCRIPT>
+        const btn = document.getElementById('button-next');
+        btn.addEventListener('click', ()=>{
+            const formAlmacenes = document.getElementById('F-Almacenes');
+            const formClientes = document.getElementById('F-Clientes');
+            const formProductos = document.getElementById('F-Productos');
+            const formOrigenes = document.getElementById('F-Origenes');
+            const formFacturas = document.getElementById('F-Facturas');
+            const formDestinos = document.getElementById('F-Destinos');
+            const formEnvios = document.getElementById('F-Envios');
+            const formTrabajadores = document.getElementById('F-Trabajadores');
+            const formSueldos = document.getElementById('F-Sueldos');
+
+            const nametable = document.getElementById('slct-tbl').value;
+            console.log(nametable);
+            switch(nametable){
+                case "Almacenes":
+                    formAlmacenes.style.display = "block";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Clientes":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "block";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Productos":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "block";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Origenes":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "block";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Facturas":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "block";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Destinos":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "block";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Envios":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "block";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Trabajadores":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "block";
+                    formSueldos.style.display = "none";
+                    break;
+                case "Sueldos":
+                formAlmacenes.style.display = "none";
+                    formClientes.style.display = "none";
+                    formProductos.style.display= "none";
+                    formOrigenes.style.display = "none";
+                    formFacturas.style.display = "none";
+                    formDestinos.style.display = "none";
+                    formEnvios.style.display = "none";
+                    formTrabajadores.style.display = "none";
+                    formSueldos.style.display = "block";
+                    break;
+            }
+    }); 
+    </SCRIPT>
+
+</DIV>
+
+<%-include("templates/footer")%>

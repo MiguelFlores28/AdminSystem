@@ -67,3 +67,21 @@ body {
 table{
   border-radius: 25px;
 }
+
+.formstyle {
+  text-align: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+input{
+  width: 50%;
+}
+
+select{
+  width: 50%;
+}
+
+.hide{
+  display: none;
+}
