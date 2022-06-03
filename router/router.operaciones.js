@@ -94,11 +94,11 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Altas"});
         })
-        /*sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql2, (err, data, fields) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));
-                res.render('view_insertar', {titulopag: "Altas"});
-        })*/
+                
+        })
     });
 
     router.post('/bajas', async (req, res, datos) =>{
@@ -113,11 +113,11 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_eliminar', {titulopag: "Bajas"});
         })
-        /*sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql2, (err, data, fields) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));
-                res.render('view_insertar', {titulopag: "Altas"});
-        })*/
+                
+        })
     });
 
     router.post('/cambios', async (req, res, datos) =>{
@@ -136,29 +136,29 @@ router.post('/altas', async (req, res, datos) =>{
 
                 case "Clientes":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_c= "+body.id_a +", nombre_c = "+body.cap_total +", apepat_c = "+body.cap_actual+", apemat_c ="+body.id_o+", clave_pedidos="+body.clave_pedidos+", id_d= "+body.id_d+
+                        " SET id_c= "+body.id_a +", nombre_c = '"+body.nombre_c +"', apepat_c = '"+body.apepat_c+"', apemat_c ='"+body.apemat_c+"', clave_pedidos='"+body.clave_pedidos+"', id_d= "+body.id_d+
                         " WHERE id_c= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_c= "+body.id_a +", nombre_c = "+body.cap_total +", apepat_c = "+body.cap_actual+", apemat_c ="+body.id_o+", clave_pedidos="+body.clave_pedidos+", id_d= "+body.id_d+
+                        " SET id_c= "+body.id_a +", nombre_c = '"+body.nombre_c +"', apepat_c = '"+body.apepat_c+"', apemat_c ='"+body.apemat_c+"', clave_pedidos='"+body.clave_pedidos+"', id_d= "+body.id_d+
                         " WHERE id_c= "+body.id_modificar+";";       
                         break;
 
                 case "Productos":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_p= "+body.id_a +", nombre_p = "+body.nombre_p +", descripcion_p = "+body.descripcion_p+", precio_p="+body.precio_p+ ", stock_p="+body.stock_p+
+                        " SET id_p= "+body.id_a +", nombre_p = '"+body.nombre_p +"', descripcion_p = '"+body.descripcion_p+"', precio_p="+body.precio_p+ ", stock_p="+body.stock_p+
                         " WHERE id_p= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_p= "+body.id_a +", nombre_p = "+body.nombre_p +", descripcion_p = "+body.descripcion_p+", precio_p="+body.precio_p+ ", stock_p="+body.stock_p+
+                        " SET id_p= "+body.id_a +", nombre_p = '"+body.nombre_p +"', descripcion_p = '"+body.descripcion_p+"', precio_p="+body.precio_p+ ", stock_p="+body.stock_p+
                         " WHERE id_p= "+body.id_modificar+";";       
                         break;
 
                 case "Origenes":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_o= "+body.id_o +", dir_origen = "+body.dir_origen +
-                        " WHERE id_o= "+body.id_modificar+";";       
+                        " SET id_o= "+body.id_o +", dir_origen = '"+body.dir_origen +
+                        "' WHERE id_o= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_o= "+body.id_o +", dir_origen = "+body.dir_origen +
-                        " WHERE id_o= "+body.id_modificar+";";       
+                        " SET id_o= "+body.id_o +", dir_origen = '"+body.dir_origen +
+                        "' WHERE id_o= "+body.id_modificar+";";       
                         break;
 
                 case "Facturas":
@@ -172,11 +172,11 @@ router.post('/altas', async (req, res, datos) =>{
 
                 case "Destinos":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_d= "+body.id_d +", dir_destino = "+body.dir_destino+
-                        " WHERE id_d= "+body.id_modificar+";";       
+                        " SET id_d= "+body.id_d +", dir_destino = '"+body.dir_destino+
+                        "' WHERE id_d= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_d= "+body.id_d +", dir_destino = "+body.dir_destino+
-                        " WHERE id_d= "+body.id_modificar+";";       
+                        " SET id_d= "+body.id_d +", dir_destino = '"+body.dir_destino+
+                        "' WHERE id_d= "+body.id_modificar+";";       
                         break;
 
                 case "Envios":
@@ -190,20 +190,20 @@ router.post('/altas', async (req, res, datos) =>{
 
                 case "Trabajadores":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_t= "+body.id_t +", nombre_t = "+body.nombre_t +", apepat_t = "+body.apepat_t +", apemat_t="+body.apemat_t+
-                        " WHERE id_t= "+body.id_modificar+";";       
+                        " SET id_t= "+body.id_t +", nombre_t = '"+body.nombre_t +"', apepat_t = '"+body.apepat_t +"', apemat_t='"+body.apemat_t+
+                        "' WHERE id_t= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_t= "+body.id_t +", nombre_t = "+body.nombre_t +", apepat_t = "+body.apepat_t +", apemat_t="+body.apemat_t+
-                        " WHERE id_t= "+body.id_modificar+";";       
+                        " SET id_t= "+body.id_t +", nombre_t = '"+body.nombre_t +"', apepat_t = '"+body.apepat_t +"', apemat_t='"+body.apemat_t+
+                        "' WHERE id_t= "+body.id_modificar+";";       
                         break;
                         break;
 
                 case "Sueldos":
                         sql= "UPDATE " + body.btn_valor + 
-                        " SET id_s= "+body.id_s +", id_t = "+body.id_t +", comision = "+body.comision+", trabajos_realizados="+body.trabajos_realizados+", sueldo_estimado="+body.sueldo_estimado+
+                        " SET id_s= "+body.id_s +", id_t = "+body.id_t +", comision = "+body.comision+", trabajos_realizados='"+body.trabajos_realizados+"', sueldo_estimado="+body.sueldo_estimado+
                         " WHERE id_s= "+body.id_modificar+";";       
                         sql2= "UPDATE " + body.btn_valor + 
-                        " SET id_s= "+body.id_s +", id_t = "+body.id_t +", comision = "+body.comision+", trabajos_realizados="+body.trabajos_realizados+", sueldo_estimado="+body.sueldo_estimado+
+                        " SET id_s= "+body.id_s +", id_t = "+body.id_t +", comision = "+body.comision+", trabajos_realizados='"+body.trabajos_realizados+"', sueldo_estimado="+body.sueldo_estimado+
                         " WHERE id_s= "+body.id_modificar+";";       
                         break;
         }
@@ -214,11 +214,11 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Cambios"});
         })
-        /*sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql2, (err, data, fields) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));
-                res.render('view_insertar', {titulopag: "Altas"});
-        })*/
+                
+        })
     });
 
 module.exports = router;
