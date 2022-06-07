@@ -9,8 +9,13 @@ var sdbcon = mysql.createConnection({
 
 //Conexión con la base de datos
 sdbcon.connect(function (err){
-    if(err) throw err;
+    try{
+        if(err) console.log(err);
     console.log("Conectado a la base de datos del servidor linux!");
+    }
+    catch(e){
+        console.log(e)
+    }
 })
 
 module.exports = sdbcon;

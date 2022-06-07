@@ -94,11 +94,12 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Altas"});
         })
-        sconn.query(sql2, (err, data, fields) =>{
+        if(sconn == true){
+                sconn.query(sql2, (err, data, fields) =>{
                 if(err) throw err;
-                console.log("Resultado "+ JSON.stringify(data));
-                
+                console.log("Resultado "+ JSON.stringify(data));  
         })
+        }
     });
 
     router.post('/bajas', async (req, res, datos) =>{
@@ -159,11 +160,13 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_eliminar', {titulopag: "Bajas"});
         })
-        sconn.query(sql2, (err, data, fields) =>{
-                if(err) throw err;
-                console.log("Resultado "+ JSON.stringify(data));
-                
-        })
+        if(sconn == true){
+                sconn.query(sql2, (err, data, fields) =>{
+                        if(err) throw err;
+                        console.log("Resultado "+ JSON.stringify(data));
+                        
+                })
+        }
     });
 
     router.post('/cambios', async (req, res, datos) =>{
@@ -260,11 +263,14 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Cambios"});
         })
-        sconn.query(sql2, (err, data, fields) =>{
-                if(err) throw err;
-                console.log("Resultado "+ JSON.stringify(data));
-                
-        })
+        if(sconn == true){
+                sconn.query(sql2, (err, data, fields) =>{
+                        if(err) throw err;
+                        console.log("Resultado "+ JSON.stringify(data));
+                        
+                })
+        }
+        
     });
 
 module.exports = router;
