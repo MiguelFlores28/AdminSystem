@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 var sdbcon = mysql.createConnection({
-    host: '172.16.112.202',
-    user: 'lnxarchitect', 
-    password:'password02',
+    host: '25.56.141.220',
+    user: 'winarchitect', 
+    password:'Pass_002',
     database: 'AdminSystemDB'
 });
 

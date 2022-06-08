@@ -94,7 +94,8 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Altas"});
         })
-        if(sconn == true){
+        if(sconn.state === 'authenticated'){
+                console.log("Si jala");
                 sconn.query(sql2, (err, data, fields) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));  
@@ -160,7 +161,7 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_eliminar', {titulopag: "Bajas"});
         })
-        if(sconn == true){
+        if(sconn.state === 'authenticated'){
                 sconn.query(sql2, (err, data, fields) =>{
                         if(err) throw err;
                         console.log("Resultado "+ JSON.stringify(data));
@@ -263,7 +264,7 @@ router.post('/altas', async (req, res, datos) =>{
                 console.log("Resultado "+ JSON.stringify(data));
                 res.render('view_insertar', {titulopag: "Cambios"});
         })
-        if(sconn == true){
+        if(sconn.state === 'authenticated'){
                 sconn.query(sql2, (err, data, fields) =>{
                         if(err) throw err;
                         console.log("Resultado "+ JSON.stringify(data));
