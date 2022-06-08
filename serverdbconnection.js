@@ -10,8 +10,9 @@ var sdbcon = mysql.createConnection({
 //Conexión con la base de datos
 sdbcon.connect(function (err){
     try{
-        if(err) console.log(err);
-    console.log("Conectado a la base de datos del servidor linux!");
+        if(err){ console.log("Fallo en la conexión a la base de datos de Linux, motivo del error: ", err);}
+        else{console.log("Conectado a la base de datos del servidor linux!");}
+    
     }
     catch(e){
         console.log(e)
