@@ -94,8 +94,8 @@ router.get('/envios',async (req, res, next)=>{
 });
 
 router.get('/facturas',async (req, res, next)=>{
-    var sql = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM Facturas INNER JOIN Clientes ON Facturas.id_c = Clientes.id_c INNER JOIN Envios ON Facturas.id_e = Envios.id_e INNER JOIN Productos ON Facturas.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_e.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_e.id_d ORDER BY id_f ASC;";
-    var sql2 = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM Facturas INNER JOIN Clientes ON Facturas.id_c = Clientes.id_c INNER JOIN Envios ON Facturas.id_e = Envios.id_e INNER JOIN Productos ON Facturas.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_e.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_e.id_d ORDER BY id_f ASC;";
+    var sql = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM Facturas INNER JOIN Clientes ON Facturas.id_c = Clientes.id_c INNER JOIN Envios ON Facturas.id_e = Envios.id_e INNER JOIN Productos ON Facturas.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_E.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
+    var sql2 = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM Facturas INNER JOIN Clientes ON Facturas.id_c = Clientes.id_c INNER JOIN Envios ON Facturas.id_e = Envios.id_e INNER JOIN Productos ON Facturas.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_E.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
         sconn.query(sql2, (err, data, fields) =>{
