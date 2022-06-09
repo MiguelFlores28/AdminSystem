@@ -12,19 +12,24 @@ router.get('/clientes',async (req, res, next)=>{
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
         sconn.query(sql2, (err, data, fields) =>{
-            if(err) throw err;
-            console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            if(err) {throw err;}
+            else{
+                console.log("Resultado "+ JSON.stringify(data));
+                console.log("Acceso a tabla Clientes de envio desde /tablas/clientes");
+                res.render('view_clientes', {titulopag: "Clientes", datosConsulta:data});
+            }
         })
-    }else(
-    lconn.query(sql, (err, data, fields) =>{
-        if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+    }
+    else{
+        lconn.query(sql, (err, data, fields) =>{
+        if(err){throw err;}
+        else{
+            console.log("Local");
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Clientes de envio desde /tablas/clientes");
+            res.render('view_clientes', {titulopag: "clientes", datosConsulta:data});
+        }
+    })}
 });
 
 router.get('/almacenes',async (req, res, next)=>{
@@ -35,17 +40,16 @@ router.get('/almacenes',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla almacenes de envio desde /tablas/almacenes");
+            res.render('view_almacenes', {titulopag: "Almacenes", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla almacenes de envio desde /tablas/almacenes");
+            res.render('view_almacenes', {titulopag: "Almacenes", datosConsulta:data});
+    })}
 });
 
 //Modificar desde aquí
@@ -57,17 +61,16 @@ router.get('/destinos',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Destinos de envio desde /tablas/destinos");
+            res.render('view_destinos', {titulopag: "Destinos", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Destinos de envio desde /tablas/destinos");
+            res.render('view_destinos', {titulopag: "Destinos", datosConsulta:data});
+    })}
 });
 
 router.get('/envios',async (req, res, next)=>{
@@ -78,17 +81,16 @@ router.get('/envios',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Envios de envio desde /tablas/Envios");
+            res.render('view_envios', {titulopag: "Envios", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Envios de envio desde /tablas/Envios");
+            res.render('view_envios', {titulopag: "Envios", datosConsulta:data});
+    })}
 });
 
 router.get('/facturas',async (req, res, next)=>{
@@ -99,17 +101,16 @@ router.get('/facturas',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Facturas de envio desde /tablas/facturas");
+            res.render('view_facturas', {titulopag: "Facturas", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Facturas de envio desde /tablas/facturas");
+            res.render('view_facturas', {titulopag: "Facturas", datosConsulta:data});
+    })}
 });
 
 router.get('/origenes',async (req, res, next)=>{
@@ -123,14 +124,14 @@ router.get('/origenes',async (req, res, next)=>{
             console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
             res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
         console.log("Local");
         console.log("Resultado "+ JSON.stringify(data));
         console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
         res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+    })}
 });
 
 router.get('/productos',async (req, res, next)=>{
@@ -141,17 +142,16 @@ router.get('/productos',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Productos de envio desde /tablas/productos");
+            res.render('view_productos', {titulopag: "Productos", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
         console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+        console.log("Acceso a tabla Productos de envio desde /tablas/productos");
+        res.render('view_productos', {titulopag: "Productos", datosConsulta:data});
+        })}
 });
 
 router.get('/sueldos',async (req, res, next)=>{
@@ -162,17 +162,16 @@ router.get('/sueldos',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Sueldos de envio desde /tablas/sueldos");
+            res.render('view_sueldos', {titulopag: "Sueldos", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Sueldos de envio desde /tablas/sueldos");
+            res.render('view_sueldos', {titulopag: "Sueldos", datosConsulta:data});
+    })}
 });
 
 router.get('/trabajadores',async (req, res, next)=>{
@@ -183,17 +182,16 @@ router.get('/trabajadores',async (req, res, next)=>{
         sconn.query(sql2, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
-            console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-            res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
+            console.log("Acceso a tabla Trabajadores de envio desde /tablas/trabajadores");
+            res.render('view_trabajadores', {titulopag: "Trabajadores", datosConsulta:data});
         })
-    }else(
+    }else{
     lconn.query(sql, (err, data, fields) =>{
         if(err) throw err;
-        console.log("Local");
-        console.log("Resultado "+ JSON.stringify(data));
-        console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
-        res.render('view_origenes', {titulopag: "Origenes", datosConsulta:data});
-    }))
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Trabajadores de envio desde /tablas/trabajadores");
+            res.render('view_trabajadores', {titulopag: "Trabajadores", datosConsulta:data});
+    })}
     
 });
 

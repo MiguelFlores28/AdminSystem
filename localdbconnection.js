@@ -2,8 +2,8 @@ var mysql = require('mysql');
 
 var ldbcon = mysql.createConnection({
     host: 'localhost',
-    user: 'root', 
-    password:'Despertad007',
+    user: 'winarchitect', 
+    password:'Pass_001',
     database: 'AdminSystemDB'
 });
 
