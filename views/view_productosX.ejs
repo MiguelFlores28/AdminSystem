@@ -1,0 +1,42 @@
+<%- include("templates/header",{titulopag:'Productos'})%>
+<DIV class="table-data">
+    <%if (error) {%>
+    <h1><%= msg %></h1>
+    <% } %>
+    <% if (!error) {%> 
+    <br><br>
+    <h2>Mostrando información de la tabla <%= titulopag%> de la base de datos AdminSystemDB</h2>
+    <br><br>
+    <table class="table table-striped table-bordered" style="width: 100%; margin:auto;">
+        <tr>
+            <th>ID</th>
+            <th>ID Almacen</th>
+            <th>Nombre Producto</th>
+            <th>Descripción Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+
+        <%
+        if(datosConsulta.length != 0){
+            datosConsulta.forEach(function(data){
+        %>
+                <tr>
+                    <td><%=data.id_p%></td>
+                    <td><%=data.id_a%></td>
+                    <td><%=data.nombre_p%></td>
+                    <td><%=data.descripcion_p%></td>
+                    <td><%=data.precio_p%></td>
+                    <td><%=data.stock_p%></td>
+                </tr>        
+        <%  });
+        }
+        else{ %>
+            <tr>
+                <td colspan="7">No se encontró información</td>
+            </tr>
+        <%}%>
+    </table>
+    <%}%>
+</DIV>
+<%- include("templates/footer")%>

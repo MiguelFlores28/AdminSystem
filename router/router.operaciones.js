@@ -16,6 +16,9 @@ router.get('/bajas',(req, res, next)=>{
 router.get('/cambios',(req, res, next)=>{
         res.render('view_modificar');
 });
+router.get('/fragmentar',(req, res, next)=>{
+        res.render('view_fragmento', {titulo: 'fragmentar'});
+});
 
 router.post('/altas', async (req, res, datos) =>{
         const body = req.body;

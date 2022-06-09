@@ -52,7 +52,6 @@ router.get('/almacenes',async (req, res, next)=>{
     })}
 });
 
-//Modificar desde aquí
 router.get('/destinos',async (req, res, next)=>{
     var sql = "SELECT * FROM Destino_E;";
     var sql2 = "SELECT * FROM Destino_E;";
@@ -195,4 +194,79 @@ router.get('/trabajadores',async (req, res, next)=>{
     
 });
 
+//Sección de las vistas correspondientes a la fragmentación 
+
+router.get('/F-productos1',async (req, res, next)=>{
+    var sql = "SELECT * FROM productos1;";
+    if(sconn.state === 'authenticated'){
+        console.log("En el servidor");
+        sconn.query(sql, (err, data, fields) =>{
+            if(err) throw err;
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Productos de envio desde /tablas/productos");
+            res.render('view_productosX', {titulopag: "Productos", error: false, datosConsulta:data});
+        })
+    }else{
+        res.render('view_productosX', {titulopag: "Productos", error: true, msg:"Datos del servidor Linux inaccessibles, intente conectar con el servidor de Linux"});
+        }
+});
+
+router.get('/F-productos2',async (req, res, next)=>{
+    var sql = "SELECT * FROM productos2;";
+    if(sconn.state === 'authenticated'){
+        console.log("En el servidor");
+        sconn.query(sql, (err, data, fields) =>{
+            if(err) throw err;
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Productos de envio desde /tablas/productos");
+            res.render('view_productosX', {titulopag: "Productos", error: false, datosConsulta:data});
+        })
+    }else{
+        res.render('view_productosX', {titulopag: "Productos", error: true, msg:"Datos del servidor Linux inaccessibles, intente conectar con el servidor de Linux"});
+        }
+});
+
+router.get('/F-facturas1',async (req, res, next)=>{
+    var sql = "SELECT id_f, clave_pedidos,Envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, Productos.precio_p, dir_origen, dir_destino FROM facturas1 INNER JOIN Clientes ON facturas1.id_c = Clientes.id_c INNER JOIN Envios ON facturas1.id_e = Envios.id_e INNER JOIN Productos ON facturas1.id_p = Productos.id_p INNER JOIN Origen_E ON Envios.id_o = Origen_E.id_o INNER JOIN Destino_E ON Envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
+    if(sconn.state === 'authenticated'){
+        console.log("En el servidor");
+        sconn.query(sql, (err, data, fields) =>{
+            if(err) throw err;
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Facturas desde /tablas/facturas1");
+            res.render('view_facturasX', {titulopag: "Facturas", error: false, datosConsulta:data});
+        })
+    }else{
+        res.render('view_facturasX', {titulopag: "Facturas", error: true, msg:"Datos del servidor Linux inaccessibles, intente conectar con el servidor de Linux"});
+        }
+});
+
+router.get('/F-sueldos1',async (req, res, next)=>{
+    var sql = "SELECT id_s, nombre_t, apepat_t, apemat_t, comision, trabajos_realizados, sueldo_estimado FROM sueldos1 INNER JOIN Trabajadores ON  sueldos1.id_t = Trabajadores.id_t;";
+    if(lconn.state === 'authenticated'){
+        console.log("En el servidor");
+        lconn.query(sql, (err, data, fields) =>{
+            if(err) throw err;
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Sueldos desde /tablas/sueldos1");
+            res.render('view_sueldosX', {titulopag: "Sueldos", error: false, datosConsulta:data});
+        })
+    }else{
+        res.render('view_sueldosX', {titulopag: "Sueldos", error: true, msg:"Datos del servidor Linux inaccessibles, intente conectar con el servidor de Linux"});
+        }
+});
+router.get('/F-clientes1',async (req, res, next)=>{
+    var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM Clientes INNER JOIN Destino_E ON Clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
+    if(lconn.state === 'authenticated'){
+        console.log("En el servidor");
+        lconn.query(sql, (err, data, fields) =>{
+            if(err) throw err;
+            console.log("Resultado "+ JSON.stringify(data));
+            console.log("Acceso a tabla Clientes desde /tablas/clientes1");
+            res.render('view_clientesX', {titulopag: "Clientes", error: false, datosConsulta:data});
+        })
+    }else{
+        res.render('view_ClientesX', {titulopag: "Clientes", error: true, msg:"Datos del servidor Linux inaccessibles, intente conectar con el servidor de Linux"});
+        }
+});
 module.exports = router;

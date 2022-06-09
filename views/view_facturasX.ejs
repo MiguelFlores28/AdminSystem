@@ -1,0 +1,50 @@
+<%- include("templates/header",{titulopag:'Facturas'})%>
+<DIV class="table-data">
+    <%if (error) {%>
+    <h1><%= msg %></h1>
+    <% } %>
+    <% if (!error) {%> 
+    <br><br>
+    <h2>Mostrando información de la tabla <%= titulopag%> de la base de datos AdminSystemDB</h2>
+    <br><br>
+    <table class="table table-striped table-bordered" style="width: 100%; margin:auto;">
+        <tr>
+            <th>ID</th>
+            <th>Clave_Cliente</th>
+            <th>ID de envio</th>
+            <th>Nombre Cliente</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Nombre Producto</th>
+            <th>Precio Producto</th>
+            <th>Dirección de origen</th>
+            <th>Dirección de destino</th>
+        </tr>
+
+        <%
+        if(datosConsulta.length != 0){
+            datosConsulta.forEach(function(data){
+        %>
+                <tr>
+                    <td><%=data.id_f%></td>
+                    <td><%=data.clave_pedidos%></td>
+                    <td><%=data.id_e%></td>
+                    <td><%=data.nombre_c%></td>
+                    <td><%=data.apepat_c%></td>
+                    <td><%=data.apemat_c%></td>
+                    <td><%=data.nombre_p%></td>
+                    <td><%=data.precio_p%></td>
+                    <td><%=data.dir_origen%></td>
+                    <td><%=data.dir_destino%></td>
+                </tr>        
+        <%  });
+        }
+        else{ %>
+            <tr>
+                <td colspan="7">No se encontró información</td>
+            </tr>
+        <%}%>
+    </table>
+    <%}%>
+</DIV>
+<%- include("templates/footer")%>

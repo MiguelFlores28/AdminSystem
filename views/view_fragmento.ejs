@@ -1,37 +1,26 @@
-<%- include("templates/header",{titulopag:'Almacenes'})%>
-<h1>Vista de las fragmentaciones actuales creadas</h1>
-<table style="margin-left:auto; margin-right:auto; padding-top:10px; width:80%; border: 1px solid; text-align:center;">
-    <tr>
-        <td>Fragmentación de la tabla productos donde los precios son mayores a $1000</td>
-    </tr>
-    <tr>
-        <td>Hola</td>
-    </tr>
-    <tr>
-        <td>Fragmentación de la tabla productos donde el stock es mayor a 100 unidades</td>
-    </tr>
-    <tr>
-        <td>Hola</td>
-    </tr>
-    <tr>
-        <td>Fragmentación de la tabla facturas donde el precio de los productos comprados se encuentre en el rango de $1500 a $3000</td> 
-    </tr>
-    <tr>
-        <td>Hola</td>
-    </tr>
-    <tr>
-        <td>Fragmentación de la tabla sueldos donde el sueldo estimado sea mayor a $2000</td>
-    </tr>
-    <tr>
-        <td>Hola</td>
-    </tr>
-    <tr>
-        <td>Fragmentación de la tabla clientes que pertenezcan al estado de Aguascalientes</td>
-    </tr>
-    <tr>
-        <td>Hola</td>
-    </tr>
-    
-</table>
+<%- include("templates/header",{titulopag:'Fragmentación'})%>
+    <h1>Vista de las fragmentaciones actuales creadas</h1>
+    <table
+        style="margin-left:auto; margin-right:auto; padding-top:10px; width:80%; border: 1px solid; text-align:center;">
+        <tr>
+            <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/F-productos1'">Fragmentación de la
+                tabla productos donde los precios son mayores a $1000<br><i class="material-icons">inventory_2</i></td>
+            <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/F-productos2'">Fragmentación de la
+                tabla productos donde el stock es mayor a 100 unidades<br><i class="material-icons">inventory_2</i></td>
+            <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/F-facturas1'">Fragmentación de la
+                tabla facturas donde el precio de los productos comprados se encuentre en el rango de $1500 a
+                $3000<br><i class="material-icons">receipt_long</i></td>
+        </tr>
 
-<%- include("templates/footer")%>
+        <tr>
+            <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/F-sueldos1'">Fragmentación de la
+                tabla sueldos donde el sueldo estimado sea mayor a $2000<br><i class="material-icons">payments</i></td>
+            <td style="padding:50px; text-align:center" onclick="location.href='/Tablas/F-clientes1'">Fragmentación de la
+                tabla clientes que pertenezcan al estado de Aguascalientes<br><i class="material-icons">group</i></td>
+            <td style="padding:50px; text-align:center" onclick="location.href='/'">Hola jeje sobra un
+                espacio xD</td>
+        </tr>
+
+    </table>
+
+    <%- include("templates/footer")%>
