@@ -8,10 +8,10 @@ router.use(express.static(__dirname + "/"));
 
 router.get('/clientes',async (req, res, next)=>{
     var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN Destino_E ON clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
-    var sql2 = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN Destino_E ON clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) {throw err;}
             else{
                 console.log("Resultado "+ JSON.stringify(data));
@@ -24,7 +24,6 @@ router.get('/clientes',async (req, res, next)=>{
         lconn.query(sql, (err, data, fields) =>{
         if(err){throw err;}
         else{
-            console.log("Local");
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla clientes de envio desde /tablas/clientes");
             res.render('view_clientes', {titulopag: "clientes", datosConsulta:data});
@@ -34,10 +33,10 @@ router.get('/clientes',async (req, res, next)=>{
 
 router.get('/almacenes',async (req, res, next)=>{
     var sql = "SELECT id_a, cap_total, cap_actual, dir_origen FROM almacenes INNER JOIN origen_e ON almacenes.id_o = origen_e.id_o;";
-    var sql2 = "SELECT id_a, cap_total, cap_actual, dir_origen FROM almacenes INNER JOIN origen_e ON almacenes.id_o = origen_e.id_o;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla almacenes de envio desde /tablas/almacenes");
@@ -54,10 +53,10 @@ router.get('/almacenes',async (req, res, next)=>{
 
 router.get('/destinos',async (req, res, next)=>{
     var sql = "SELECT * FROM Destino_E;";
-    var sql2 = "SELECT * FROM Destino_E;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla destinos de envio desde /tablas/destinos");
@@ -74,10 +73,10 @@ router.get('/destinos',async (req, res, next)=>{
 
 router.get('/envios',async (req, res, next)=>{
     var sql = "SELECT envios.id_e, envios.id_o, envios.id_d, dir_origen, dir_destino FROM envios INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d  ORDER BY id_e ASC;";
-    var sql2 = "SELECT envios.id_e, envios.id_o, envios.id_d, dir_origen, dir_destino FROM envios INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d  ORDER BY id_e ASC;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla envios de envio desde /tablas/envios");
@@ -94,10 +93,10 @@ router.get('/envios',async (req, res, next)=>{
 
 router.get('/facturas',async (req, res, next)=>{
     var sql = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas INNER JOIN clientes ON facturas.id_c = clientes.id_c INNER JOIN envios ON facturas.id_e = envios.id_e INNER JOIN productos ON facturas.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
-    var sql2 = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas INNER JOIN clientes ON facturas.id_c = clientes.id_c INNER JOIN envios ON facturas.id_e = envios.id_e INNER JOIN productos ON facturas.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla facturas de envio desde /tablas/facturas");
@@ -114,10 +113,10 @@ router.get('/facturas',async (req, res, next)=>{
 
 router.get('/origenes',async (req, res, next)=>{
     var sql = "SELECT * FROM origen_e;";
-    var sql2 = "SELECT * FROM origen_e;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla Origenes de envio desde /tablas/origenes");
@@ -135,10 +134,10 @@ router.get('/origenes',async (req, res, next)=>{
 
 router.get('/productos',async (req, res, next)=>{
     var sql = "SELECT * FROM productos;";
-    var sql2 = "SELECT * FROM productos;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla productos de envio desde /tablas/productos");
@@ -155,10 +154,10 @@ router.get('/productos',async (req, res, next)=>{
 
 router.get('/sueldos',async (req, res, next)=>{
     var sql = "SELECT id_s, nombre_t, apepat_t, apemat_t, comision, trabajos_realizados, sueldo_estimado FROM sueldos INNER JOIN trabajadores ON  sueldos.id_t = trabajadores.id_t;";
-    var sql2 = "SELECT id_s, nombre_t, apepat_t, apemat_t, comision, trabajos_realizados, sueldo_estimado FROM sueldos INNER JOIN trabajadores ON  sueldos.id_t = trabajadores.id_t;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla sueldos de envio desde /tablas/sueldos");
@@ -175,10 +174,10 @@ router.get('/sueldos',async (req, res, next)=>{
 
 router.get('/trabajadores',async (req, res, next)=>{
     var sql = "SELECT * FROM trabajadores;";
-    var sql2 = "SELECT * FROM trabajadores;";
+    
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
-        sconn.query(sql2, (err, data, fields) =>{
+        sconn.query(sql, (err, data, fields) =>{
             if(err) throw err;
             console.log("Resultado "+ JSON.stringify(data));
             console.log("Acceso a tabla trabajadores de envio desde /tablas/trabajadores");
