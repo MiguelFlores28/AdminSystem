@@ -4,7 +4,7 @@ var sdbcon = mysql.createConnection({
     host: '192.168.1.101',
     user: 'lnxarchitect', 
     password:'password02',
-    database: 'AdminSystemDB'
+    database: 'adminsystemdb'
 });
 
 //Conexión con la base de datos

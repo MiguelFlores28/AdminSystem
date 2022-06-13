@@ -8,193 +8,193 @@
         <label for="nombre-tabla">Selecciona el nombre de la tabla donde se hará la eliminación de datos: </label>
         <br><br><br><br>
         <select name="nombre-tabla" id="slct-tbl">
-            <option value="Almacenes">Almacenes</option>
-            <option value="Clientes">Clientes</option>
-            <option value="Productos">Productos</option>
-            <option value="Origen_E">Origenes</option>
-            <option value="Facturas">Facturas</option>
-            <option value="Destino_E">Destinos</option>
-            <option value="Envios">Envios</option>
-            <option value="Trabajadores">Trabajadores</option>
-            <option value="Sueldos">Sueldos</option>
+            <option value="almacenes">almacenes</option>
+            <option value="clientes">clientes</option>
+            <option value="productos">productos</option>
+            <option value="origen_e">Origenes</option>
+            <option value="facturas">facturas</option>
+            <option value="destino_e">Destinos</option>
+            <option value="envios">envios</option>
+            <option value="trabajadores">trabajadores</option>
+            <option value="sueldos">sueldos</option>
         </select>
         <br>
         <br>
         <button type="button" id="button-next" name="button-next">Siguiente</button>
     </form><br><br>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Almacenes' name='Almacenes' style="display:none">
-        <input type="text" name="nombreTabla" value="Almacenes" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-almacenes' name='almacenes' style="display:none">
+        <input type="text" name="nombreTabla" value="almacenes" disabled><br>
         <input type="text" name="id_a" placeholder="ID"> <br>
-    <button type="submit" name="btn_valor" id="btn_valor" value="Almacenes">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="almacenes">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Clientes' name='Clientes' style="display:none">
-        <input type="text" name="nombreTabla" value="Clientes" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-clientes' name='clientes' style="display:none">
+        <input type="text" name="nombreTabla" value="clientes" disabled><br>
         <input type="text" name="id_c" placeholder="ID"><br>
-    <button type="submit" name="btn_valor" id="btn_valor" value="Clientes">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="clientes">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Productos' name='Productos' style="display:none">
-        <input type="text" name="nombreTabla" value="Productos" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-productos' name='productos' style="display:none">
+        <input type="text" name="nombreTabla" value="productos" disabled><br>
         <input type="text" name="id_p" placeholder="ID"><br>
-    <button type="submit" name="btn_valor" id="btn_valor" value="Productos">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="productos">Baja</button>
     </form>
     
     <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Origenes' name='Origenes' style="display:none">
-        <input type="text" name="nombreTabla" value="Origen_E" disabled><br>
+        <input type="text" name="nombreTabla" value="origen_e" disabled><br>
         <input type="text" name="id_o" placeholder="ID"><br>
-    <button type="submit" name="btn_valor" id="btn_valor" value="Origen_E">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="origen_e">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Facturas' name='Facturas' style="display:none">
-        <input type="text" name="nombreTabla" value="Facturas" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-facturas' name='facturas' style="display:none">
+        <input type="text" name="nombreTabla" value="facturas" disabled><br>
         <input type="text" name="id_f" placeholder="ID"><br>
 
-    <button type="submit" name="btn_valor" id="btn_valor" value="Facturas">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="facturas">Baja</button>
     </form>
     
     <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Destinos' name='Destinos' style="display:none">
-        <input type="text" name="nombreTabla" value="Destino_E" disabled><br>
+        <input type="text" name="nombreTabla" value="destino_e" disabled><br>
         <input type="text" name="id_d" placeholder="ID"><br>
-    <button type="submit" name="btn_valor" id="btn_valor" value="Destino_E">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="destino_e">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Envios' name='Envios' style="display:none">
-        <input type="text" name="nombreTabla" value="Envios" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-envios' name='envios' style="display:none">
+        <input type="text" name="nombreTabla" value="envios" disabled><br>
         <input type="text" name="id_e" placeholder="ID"><br>
 
-    <button type="submit" name="btn_valor" id="btn_valor" value="Envios">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="envios">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Trabajadores' name='Trabajadores' style="display:none">
-        <input type="text" name="nombreTabla" value="Trabajadores" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-trabajadores' name='trabajadores' style="display:none">
+        <input type="text" name="nombreTabla" value="trabajadores" disabled><br>
         <input type="text" name="id_t" placeholder="ID"><br>
 
-    <button type="submit" name="btn_valor" id="btn_valor" value="Trabajadores">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="trabajadores">Baja</button>
     </form>
     
-    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-Sueldos' name='Sueldos' style="display:none">
-        <input type="text" name="nombreTabla" value="Sueldos" disabled><br>
+    <form class="formstyle" action="/Operaciones/bajas" method="post" id='F-sueldos' name='sueldos' style="display:none">
+        <input type="text" name="nombreTabla" value="sueldos" disabled><br>
         <input type="text" name="id_s" placeholder="ID"><br>
 
-    <button type="submit" name="btn_valor" id="btn_valor" value="Sueldos">Baja</button>
+    <button type="submit" name="btn_valor" id="btn_valor" value="sueldos">Baja</button>
     </form>
     
     <SCRIPT>
         const btn = document.getElementById('button-next');
         btn.addEventListener('click', ()=>{
-            const formAlmacenes = document.getElementById('F-Almacenes');
-            const formClientes = document.getElementById('F-Clientes');
-            const formProductos = document.getElementById('F-Productos');
+            const formalmacenes = document.getElementById('F-almacenes');
+            const formclientes = document.getElementById('F-clientes');
+            const formproductos = document.getElementById('F-productos');
             const formOrigenes = document.getElementById('F-Origenes');
-            const formFacturas = document.getElementById('F-Facturas');
+            const formfacturas = document.getElementById('F-facturas');
             const formDestinos = document.getElementById('F-Destinos');
-            const formEnvios = document.getElementById('F-Envios');
-            const formTrabajadores = document.getElementById('F-Trabajadores');
-            const formSueldos = document.getElementById('F-Sueldos');
+            const formenvios = document.getElementById('F-envios');
+            const formtrabajadores = document.getElementById('F-trabajadores');
+            const formsueldos = document.getElementById('F-sueldos');
 
             const nametable = document.getElementById('slct-tbl').value;
             console.log(nametable);
             switch(nametable){
-                case "Almacenes":
-                    formAlmacenes.style.display = "block";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "almacenes":
+                    formalmacenes.style.display = "block";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Clientes":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "block";
-                    formProductos.style.display= "none";
+                case "clientes":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "block";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Productos":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "block";
+                case "productos":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "block";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Origen_E":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "origen_e":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "block";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Facturas":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "facturas":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "block";
+                    formfacturas.style.display = "block";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Destino_E":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "destino_e":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "block";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Envios":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "envios":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "block";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "block";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "none";
                     break;
-                case "Trabajadores":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "trabajadores":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "block";
-                    formSueldos.style.display = "none";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "block";
+                    formsueldos.style.display = "none";
                     break;
-                case "Sueldos":
-                formAlmacenes.style.display = "none";
-                    formClientes.style.display = "none";
-                    formProductos.style.display= "none";
+                case "sueldos":
+                formalmacenes.style.display = "none";
+                    formclientes.style.display = "none";
+                    formproductos.style.display= "none";
                     formOrigenes.style.display = "none";
-                    formFacturas.style.display = "none";
+                    formfacturas.style.display = "none";
                     formDestinos.style.display = "none";
-                    formEnvios.style.display = "none";
-                    formTrabajadores.style.display = "none";
-                    formSueldos.style.display = "block";
+                    formenvios.style.display = "none";
+                    formtrabajadores.style.display = "none";
+                    formsueldos.style.display = "block";
                     break;
             }
     }); 

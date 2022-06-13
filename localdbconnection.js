@@ -4,7 +4,7 @@ var ldbcon = mysql.createConnection({
     host: 'localhost',
     user: 'winarchitect', 
     password:'Pass_001',
-    database: 'AdminSystemDB'
+    database: 'adminsystemdb'
 });
 
 //Conexión con la base de datos
