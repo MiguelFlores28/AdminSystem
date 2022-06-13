@@ -103,7 +103,7 @@ router.post('/altas', async (req, res, datos) =>{
                 if(err) throw err;
                 console.log("Resultado "+ JSON.stringify(data));  
         })
-
+        }
     });
 
     router.post('/bajas', async (req, res, datos) =>{
