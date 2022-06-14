@@ -52,7 +52,7 @@ router.get('/almacenes',async (req, res, next)=>{
 });
 
 router.get('/destinos',async (req, res, next)=>{
-    var sql = "SELECT * FROM Destino_E;";
+    var sql = "SELECT * FROM destino_e;";
     
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
