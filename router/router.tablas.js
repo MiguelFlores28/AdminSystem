@@ -7,7 +7,7 @@ router.use(express.static(__dirname + "/public"));
 router.use(express.static(__dirname + "/"));
 
 router.get('/clientes',async (req, res, next)=>{
-    var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN Destino_E ON clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
+    var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN destino_e ON clientes.id_d = destino_e.id_d  ORDER BY id_c ASC;";
     
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
@@ -72,7 +72,7 @@ router.get('/destinos',async (req, res, next)=>{
 });
 
 router.get('/envios',async (req, res, next)=>{
-    var sql = "SELECT envios.id_e, envios.id_o, envios.id_d, dir_origen, dir_destino FROM envios INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d  ORDER BY id_e ASC;";
+    var sql = "SELECT envios.id_e, envios.id_o, envios.id_d, dir_origen, dir_destino FROM envios INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN destino_e ON envios.id_d = destino_e.id_d  ORDER BY id_e ASC;";
     
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
@@ -92,7 +92,7 @@ router.get('/envios',async (req, res, next)=>{
 });
 
 router.get('/facturas',async (req, res, next)=>{
-    var sql = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas INNER JOIN clientes ON facturas.id_c = clientes.id_c INNER JOIN envios ON facturas.id_e = envios.id_e INNER JOIN productos ON facturas.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
+    var sql = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas INNER JOIN clientes ON facturas.id_c = clientes.id_c INNER JOIN envios ON facturas.id_e = envios.id_e INNER JOIN productos ON facturas.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN destino_e ON envios.id_d = destino_e.id_d ORDER BY id_f ASC;";
     
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
@@ -226,7 +226,7 @@ router.get('/F-productos2',async (req, res, next)=>{
 });
 
 router.get('/F-facturas1',async (req, res, next)=>{
-    var sql = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas1 INNER JOIN clientes ON facturas1.id_c = clientes.id_c INNER JOIN envios ON facturas1.id_e = envios.id_e INNER JOIN productos ON facturas1.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN Destino_E ON envios.id_d = Destino_E.id_d ORDER BY id_f ASC;";
+    var sql = "SELECT id_f, clave_pedidos,envios.id_e, nombre_c, apepat_c, apemat_c, nombre_p, productos.precio_p, dir_origen, dir_destino FROM facturas1 INNER JOIN clientes ON facturas1.id_c = clientes.id_c INNER JOIN envios ON facturas1.id_e = envios.id_e INNER JOIN productos ON facturas1.id_p = productos.id_p INNER JOIN origen_e ON envios.id_o = origen_e.id_o INNER JOIN destino_e ON envios.id_d = destino_e.id_d ORDER BY id_f ASC;";
     if(sconn.state === 'authenticated'){
         console.log("En el servidor");
         sconn.query(sql, (err, data, fields) =>{
@@ -255,7 +255,7 @@ router.get('/F-sueldos1',async (req, res, next)=>{
         }
 });
 router.get('/F-clientes1',async (req, res, next)=>{
-    var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN Destino_E ON clientes.id_d = Destino_E.id_d  ORDER BY id_c ASC;";
+    var sql = "SELECT id_c, nombre_c, apepat_c, apemat_c, clave_pedidos, dir_destino FROM clientes INNER JOIN destino_e ON clientes.id_d = destino_e.id_d  ORDER BY id_c ASC;";
     if(lconn.state === 'authenticated'){
         console.log("En el servidor");
         lconn.query(sql, (err, data, fields) =>{
